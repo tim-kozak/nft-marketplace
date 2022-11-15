@@ -1,0 +1,30 @@
+.button {
+  .connect {
+    font-size: 16px;
+    background: url("./img/metamask-logo.png") no-repeat 17px center;
+    background-size: 30px auto;
+    padding: 7px 20px 7px 57px;
+    transition: all 0.3s linear;
+    color: #ffffff;
+    border-color: #fff;
+    opacity: 0.7;
+
+    &:hover {
+      opacity: 1;
+      background-size: 35px auto;
+      background-position: 14px center;
+    }
+  }
+  &.loading {
+    .connect {
+      background: none;
+    }
+  }
+
+  &.disabled {
+    .connect {
+      background-color: rgba(255,255,255,0.1);
+      opacity: 1;
+    }
+  }
+}

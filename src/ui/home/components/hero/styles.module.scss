@@ -1,0 +1,126 @@
+.hero {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info {
+  .create {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .slogan {
+    color: white;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 60px;
+  }
+
+  .slogan span {
+    -webkit-text-fill-color: transparent;
+    background: -webkit-linear-gradient(#fff, #9a8e8e);
+    -webkit-background-clip: text;
+  }
+
+  .subtitle {
+    --tw-text-opacity: 1;
+    color: rgb(107,114,128);
+    font-weight: 600;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    margin-top: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .stats {
+    margin-top: 0.75rem;
+    display: flex;
+    font-weight: 700;
+  }
+
+  .stats li {
+    flex: 1;
+    font-size: 14px;
+  }
+
+  .stats span {
+    display: block;
+    font-size: 80%;
+  }
+}
+
+
+.account {
+  width: 600px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  box-shadow: 0 7px 5px 0 #00000010, 0 9px 8px 0 #00000010;
+  transition: all 0.3s linear;
+
+  &.bg {
+    border-style: solid;
+    background: url("./img/bg.png") no-repeat bottom center;
+    background-size: 100% auto;
+    box-shadow: 0 7px 9px 0 #00000020, 0 9px 12px 0 #00000020;
+  }
+
+  .connection {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .no_wallet {
+    font-size: 12px;
+    text-align: center;
+    padding: 5px 0px;
+
+     a {
+       text-decoration: underline;
+     }
+  }
+
+  .account_details {
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+
+    .account_image {
+      overflow: hidden;
+      width: 80px;
+      height: 80px;
+      margin: 0 20px 0 0;
+      border-radius: 50%;
+      border: 1px dashed rgba(255, 255, 255, 1);
+    }
+
+    .avatar {
+      border-style: solid;
+      background: url("./img/avatar.png") no-repeat center center;
+      background-size: cover;
+    }
+
+    .account_description {
+      padding: 8px 0 0;
+    }
+
+    .account_address {
+      font-size: 13px;
+      opacity: 0.5;
+    }
+
+    .account_name {
+      font-size: 20px;
+    }
+  }
+}
+
+
+
+
+

@@ -1,0 +1,35 @@
+.menu {
+  overflow: hidden;
+  display: flex;
+  padding: 0 0 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  overflow: hidden;
+  width: 120px;
+  height: 60px;
+  margin: 0;
+  padding: 0;
+  background: url('./img/logo.png') no-repeat center center;
+  background-size: 100% auto;
+  text-indent: -2000%;
+}
+
+.nav {
+  display: flex;
+  height: 60px;
+  font-size: 17px;
+}
+
+.nav li {
+  height: inherit;
+  margin: 0 0 0 5px;
+}
+
+.nav li a {
+  display: block;
+  height: inherit;
+  padding: 16px 20px 0;
+}

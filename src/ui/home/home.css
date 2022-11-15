@@ -1,0 +1,15 @@
+.App-sizer {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.App-header {
+  padding: 20px 20px 40px;
+  background-image: radial-gradient(at 0 0,#392239 0,transparent 50%),radial-gradient(at 50% 0,#6a2f2f 0,transparent 50%),radial-gradient(at 100% 0,#722741 0,transparent 50%);
+}
+
+.App-section {
+  padding: 20px 20px 40px;
+  border-top: 2px solid #392239;
+  background-image: radial-gradient(at 50% 50%, #392239 0, transparent 50%), radial-gradient(at 0 0, #100f15 0, transparent 50%), radial-gradient(at 50% 50%, #592738 0, transparent 50%);
+}
