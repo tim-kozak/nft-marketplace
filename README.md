@@ -28,7 +28,8 @@ This project was created to work with ERC-721 based smart contract using MetaMas
 3. Run `npm install`
 4. Run `ganache-cli -d`
 5. Run `truffle migrate –network development`
-6. Run `npm start`
+6. Copy `/build/contracts/NFTContract.json` to `/src/shared/api`
+7. Run `npm start`
 
 It will run the app in development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
