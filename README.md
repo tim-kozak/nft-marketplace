@@ -24,7 +24,7 @@ This project was created to work with ERC-721 based smart contract using MetaMas
 ## Setup
 
 1. Make sure you have [MetaMask](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en) 
-2. You need to update .env file with Infura API keys 
+2. You need to update `/public/config.json` file with Infura API keys 
 3. Run `npm install`
 4. Run `ganache-cli -d`
 5. Run `truffle migrate –network development`
