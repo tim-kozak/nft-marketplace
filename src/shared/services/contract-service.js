@@ -66,7 +66,7 @@ export class ContractService {
             console.error(error);
         }
 
-        return null;
+        return [];
     }
 
     fetchAllTransactions = async () => {
@@ -87,6 +87,6 @@ export class ContractService {
             console.error(error);
         }
 
-        return null;
+        return [];
     }
 }
