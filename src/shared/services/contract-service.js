@@ -31,7 +31,6 @@ export class ContractService {
 
     mintNFT = async (file, title, price, description, account) => {
         try {
-            debugger;
             const ipfsURL = await this._ipfsService.saveToIPFS(file);
 
             const web3Instance = this._walletService.web3;

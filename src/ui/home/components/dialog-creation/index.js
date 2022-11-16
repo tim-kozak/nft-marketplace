@@ -39,6 +39,20 @@ export const CreationDialog = appObserver(({isOpen, onClose, onSubmit}) => {
         });
     }
 
+    function handleFileSelected (e) {
+        const reader = new FileReader()
+        if (e.target.files[0]) reader.readAsDataURL(e.target.files[0])
+
+        reader.onload = (readerEvent) => {
+            const file = readerEvent.target.result
+            const f = file[0];
+            setImage({
+                preview: file,
+                file: f
+            });
+        }
+    }
+
     return (
         <ConfirmationDialog
             title={'Create new NFT'}
@@ -47,18 +61,20 @@ export const CreationDialog = appObserver(({isOpen, onClose, onSubmit}) => {
             buttons={buttons}
         >
             <div className={s.root}>
-                <div
-                    {...getRootProps()}
-                    className={cn(s.dropzone,{ [s.active]: isDragActive})}
-                    style={ image ? { backgroundImage: `url(${image.preview})` } : null }
-                >
-                    <input {...getInputProps()} />
-                    <div className={s.icons}>
-                        Drop your artwork here
-                        <span>*up to {MAX_SIZE_WORDS}</span>
-                    </div>
-                </div>
+                {/*<div*/}
+                {/*    {...getRootProps()}*/}
+                {/*    className={cn(s.dropzone,{ [s.active]: isDragActive})}*/}
+                {/*    style={ image ? { backgroundImage: `url(${image.preview})` } : null }*/}
+                {/*>*/}
+                {/*    <input {...getInputProps()} />*/}
+                {/*    <div className={s.icons}>*/}
+                {/*        Drop your artwork here*/}
+                {/*        <span>*up to {MAX_SIZE_WORDS}</span>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
                 <div className={s.fields}>
+                    { image && image.preview && <img src={image.preview} />}
+                    <input className={s.field} type="file" name="file" accept="image/png, image/gif, image/jpeg, image/webp" onChange={handleFileSelected} />
                     <TextField className={s.field} type="text" step="0.01" min="0.01" placeholder="Title" value={title} onChange={e => setTitle(e.target.value)} />
                     <TextField className={s.field} type="number" step="0.01" min="0.01" placeholder="Price (Eth)" value={price} onChange={e => setPrice(e.target.value)} />
                     <TextField multiline minRows={2} className={s.field} placeholder="Description" value={description} onChange={e => setDescription(e.target.value)} />

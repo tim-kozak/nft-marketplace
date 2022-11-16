@@ -71,12 +71,12 @@ export class HomeViewModel {
     handleCreateNFT = async (imageFile, title, price, description) => {
         try {
             this._isLoading = true
+            this._showCreateModal = false;
             const account = this._accountVM.currentAccount;
             await this._contractService.mintNFT(imageFile, title, price, description,account);
             await this.#fetchData();
-            this._showCreateModal = false;
         } catch (e) {
-
+            this._showCreateModal = true;
         }
         this._isLoading = false;
     }

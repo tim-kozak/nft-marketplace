@@ -12,7 +12,6 @@ export class IPFSService {
 
     constructor() {
         const { host, port, pid, token} = this._configService.ipfs;
-        debugger;
         const auth = `Basic ${Buffer.from(pid+':'+token).toString('base64')}`;
 
         this._client = create({
@@ -23,18 +22,9 @@ export class IPFSService {
         });
     }
 
-    #toBase64 = file => new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = () => resolve(reader.result);
-        reader.onerror = error => reject(error);
-    });
-
     saveToIPFS = async (file) => {
-        const base64 = await this.#toBase64(file);
-        const res = await this._client.add(Buffer.from(base64, 'base64'));
-        debugger;
-        return `https://ipfs.io/ipfs/${res.cid}`;
+        const res = await this._client.add(file);
+        return `https://ipfs.io/ipfs/${res.path}`;
     }
 
 }

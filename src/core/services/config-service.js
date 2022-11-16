@@ -25,7 +25,6 @@ export class ConfigService {
   async #setConfig() {
     const { data } = await this._client.get('./config.json');
     this._config = data;
-    debugger;
   }
 
   #createClient = () => {
